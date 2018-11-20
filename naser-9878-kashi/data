@@ -1,0 +1,11 @@
+{
+  "ids": {
+    "CeramicTile": 3
+  },
+  "models": {
+    "CeramicTile": {
+      "10ba038e-48da-487b-96e8-8d3b99b6d18a": "{\"id\":\"10ba038e-48da-487b-96e8-8d3b99b6d18a\",\"img\":\"string\",\"meterial\":\"string\",\"glaze\":\"string\",\"surface\":\"string\",\"color\":\"string\",\"slice\":\"string\",\"company\":\"string\",\"size\":\"string\",\"descrip\":\"string\",\"spectrum\":\"string\",\"price\":0,\"grade\":0,\"tag\":[\"string\"]}",
+      "10ba038e-45aa-487b-96e8-8d3b99b6d18a": "{\"id\":\"10ba038e-45aa-487b-96e8-8d3b99b6d18a\",\"img\":\"string\",\"meterial\":\"string\",\"glaze\":\"string\",\"surface\":\"string\",\"color\":\"string\",\"slice\":\"string\",\"company\":\"string\",\"size\":\"string\",\"descrip\":\"string\",\"spectrum\":\"string\",\"price\":0,\"grade\":0,\"tag\":[\"string\"]}"
+    }
+  }
+}

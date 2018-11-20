@@ -1,0 +1,259 @@
+---
+openapi: 3.0.0
+info:
+  title: LoopBack Application
+  version: 1.0.0
+servers:
+- url: https://virtserver.swaggerhub.com/vakili73/Naser9878_kashi/1.0.0
+  description: SwaggerHub API Auto Mocking
+- url: http://127.0.0.1:3000
+paths:
+  /ceramic-tiles/count:
+    get:
+      tags:
+      - CeramicTileController
+      parameters:
+      - name: where
+        in: query
+        required: false
+        style: DEEPOBJECT
+        explode: true
+        schema:
+          type: object
+      responses:
+        200:
+          description: CeramicTile model count
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+      extensions:
+        x-controller-name: CeramicTileController
+        x-operation-name: count
+  /ceramic-tiles/{id}:
+    get:
+      tags:
+      - CeramicTileController
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: SIMPLE
+        explode: false
+        schema:
+          type: string
+      responses:
+        200:
+          description: CeramicTile model instance
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CeramicTile'
+      extensions:
+        x-controller-name: CeramicTileController
+        x-operation-name: findById
+    delete:
+      tags:
+      - CeramicTileController
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: SIMPLE
+        explode: false
+        schema:
+          type: string
+      responses:
+        204:
+          description: CeramicTile DELETE success
+      extensions:
+        x-controller-name: CeramicTileController
+        x-operation-name: deleteById
+    patch:
+      tags:
+      - CeramicTileController
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: SIMPLE
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CeramicTile'
+        extensions:
+          x-parameter-index: 1
+      responses:
+        204:
+          description: CeramicTile PATCH success
+      extensions:
+        x-controller-name: CeramicTileController
+        x-operation-name: updateById
+  /ceramic-tiles:
+    get:
+      tags:
+      - CeramicTileController
+      parameters:
+      - name: filter
+        in: query
+        required: false
+        style: DEEPOBJECT
+        explode: true
+        schema:
+          $ref: '#/components/schemas/filter'
+      responses:
+        200:
+          description: Array of CeramicTile model instances
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CeramicTile'
+      extensions:
+        x-controller-name: CeramicTileController
+        x-operation-name: find
+    post:
+      tags:
+      - CeramicTileController
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CeramicTile'
+      responses:
+        200:
+          description: CeramicTile model instance
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CeramicTile'
+      extensions:
+        x-controller-name: CeramicTileController
+        x-operation-name: create
+    patch:
+      tags:
+      - CeramicTileController
+      parameters:
+      - name: where
+        in: query
+        required: false
+        style: DEEPOBJECT
+        explode: true
+        schema:
+          type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CeramicTile'
+      responses:
+        200:
+          description: CeramicTile PATCH success count
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+      extensions:
+        x-controller-name: CeramicTileController
+        x-operation-name: updateAll
+  /ping:
+    get:
+      tags:
+      - PingController
+      responses:
+        200:
+          description: Ping Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_1'
+      extensions:
+        x-controller-name: PingController
+        x-operation-name: ping
+components:
+  schemas:
+    CeramicTile:
+      title: CeramicTile
+      required:
+      - id
+      properties:
+        id:
+          type: string
+        img:
+          type: string
+        meterial:
+          type: string
+        glaze:
+          type: string
+        surface:
+          type: string
+        color:
+          type: string
+        slice:
+          type: string
+        company:
+          type: string
+        size:
+          type: string
+        descrip:
+          type: string
+        spectrum:
+          type: string
+        price:
+          type: number
+        grade:
+          type: number
+        tag:
+          type: array
+          items:
+            type: string
+    inline_response_200:
+      type: object
+      properties:
+        count:
+          type: number
+    filter:
+      type: object
+      properties:
+        where:
+          type: object
+        fields:
+          type: object
+        offset:
+          minimum: 0
+          type: integer
+          format: int32
+        limit:
+          minimum: 0
+          type: integer
+          format: int32
+        skip:
+          minimum: 0
+          type: integer
+          format: int32
+        order:
+          type: array
+          items:
+            type: string
+    inline_response_200_1_headers:
+      type: object
+      properties:
+        Content-Type:
+          type: string
+    inline_response_200_1:
+      type: object
+      properties:
+        greeting:
+          type: string
+        date:
+          type: string
+        url:
+          type: string
+        headers:
+          $ref: '#/components/schemas/inline_response_200_1_headers'
+  extensions: {}
